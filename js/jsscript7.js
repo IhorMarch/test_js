@@ -1036,3 +1036,23 @@
 
 // atTheOldToad.updatePotionName("Dragon breath", "Huylo")
 // console.log(atTheOldToad.getPotions())
+
+function digitalRoot(n) {
+  // Base case: if n is a single-digit number, return n
+  if (n < 10) {
+    return n;
+  }
+
+  // Convert the number to a string and split it into an array of digits
+  const digits = String(n).split('').map(Number);
+
+  // Calculate the sum of the digits
+  const sum = digits.reduce((acc, digit) => acc + digit, 0);
+
+  // Recursively call digitalRoot on the sum
+  return digitalRoot(sum);
+}
+
+// Example usage:
+const result = digitalRoot(942);
+console.log(result); // Output: 6
